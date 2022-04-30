@@ -32,7 +32,8 @@ public class Main {
         // check user input match the requirment Positive decimal number
         do{
             System.out.println("Enter number of array:");
-            input=sc.nextLine();           
+            input=sc.nextLine();
+            // check user input is empty
             if(input.isEmpty()){
                 System.out.println("Input can't be empty ,"
                         + "please input a positive"
@@ -41,22 +42,25 @@ public class Main {
             }
             try{
                 number=Double.parseDouble(input);
+                // check input <0
                 if(number < 0){
                     System.out.println("Input can't be smaller"
                             + " than 0 , please input a positive"
                             + " integer");
                 }
+                // check input =0
                 else if(number ==0){
                     System.out.println("Input can't be 0,"
                             + " please input a positive"
                             + " integer");
                 }
+                // check input is real number
                 else if(number !=(int)number){
                     System.out.println("Input can't be real number,"
                             + " please input a positive"
                             + " integer");
                 }else break;
-            }catch(Exception e){
+            }catch(Exception e){// catch if user input a character or string
                 System.out.println("Input can't be a string,"
                         + " please input a positive"
                             + " integer");
